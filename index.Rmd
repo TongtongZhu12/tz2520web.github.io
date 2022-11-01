@@ -16,3 +16,35 @@ output:
 
 This website contains my personal brief introduction, academic & professional experience, recent plot works shown on dashboard and contact information.
 
+<br>
+
+## About Me
+
+### Brief Introduction
+
+I am a second year MPH student in [Health Policy and Management](https://www.publichealth.columbia.edu/academics/departments/health-policy-and-management) Department of Mailman School of Public Health at [Columbia University](https://www.columbia.edu/). I currently live in Washington Heights of New York City. 
+
+<br>
+
+### Academic & Professional Experience
+
+I am a master candidate of Health Policy, with Epidemiology of Chronic Disease certificate. I worked as a Communication and Engagement Intern this summer at [Qeios](https://www.qeios.com/teaser). Please visit my [Experience](experience.html) page for more information.
+
+<br>
+
+### Recent Plot Works
+
+Please review my recent plot works on [Dashboard](dashboard.html).
+
+<br>
+
+### More About Me
+
+Please click here to know more [About](about.html) me.
+
+<br>
+
+### Contact Me
+
+Welcome to connect with me on [LinkedIn](https://www.linkedin.com/in/tina-zhu-834b44222/).
+

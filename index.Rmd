@@ -6,3 +6,13 @@ output:
     toc_float: true
 ---
 
+<br>
+
+![](images/welcome.jpg)
+
+<br>
+
+## About This Website
+
+This website contains my personal brief introduction, academic & professional experience, recent plot works shown on dashboard and contact information.
+

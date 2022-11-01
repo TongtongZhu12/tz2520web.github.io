@@ -1,0 +1,23 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About"
+      href: about.html
+    - text: "Experience"
+      href: experience.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<tz2520.columbia.edu>
+    - text: "Plotly"
+      href: plotly.html
+    - text: "Dashboard"
+      href: dashboard.html
+    - icon: fa-github fa-lg
+      href: http://github.com/TongtongZhu12/
+    - icon: fab fa-linkedin
+      href: https://www.linkedin.com/in/tina-zhu-834b44222/
+    
+output:
+  html_document:
+    theme: cerulean

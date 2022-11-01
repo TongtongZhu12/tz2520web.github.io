@@ -60,3 +60,48 @@ noaa_sub = ny_noaa %>%
     drop_na()
 
 ```
+
+# Plotly plots
+
+## Scatter plot
+
+**tmin vs tmax per month in 2010 for Station A, B, C**
+
+
+```{r}
+noaa_sub %>%
+  mutate(text_label = name) %>% 
+   plot_ly(
+     x = ~tmin, y = ~tmax, 
+     color = ~month, type = "scatter", mode = "markers", 
+     text = ~text_label, colors = "viridis", alpha = 0.5)
+```
+
+
+## box plot
+
+**tmax change per month in 2010**
+
+```{r}
+noaa_sub %>%
+  plot_ly(
+    x = ~month, y = ~tmax,  color = ~month,
+    type = "box", colors = "viridis")
+    
+```
+
+## bar plot
+
+**precipitation change per day in June, 2010**
+
+```{r}
+noaa_sub %>% 
+  filter(month == "June") %>% 
+  plot_ly(
+    x = ~day, y = ~prcp, color = ~day, type = "bar",  colors = "viridis")
+```
+
+
+
+
+

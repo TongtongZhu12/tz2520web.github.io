@@ -1,0 +1,60 @@
+---
+title: "Academic & Professonal Experience"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+<br> 
+
+## Academic Experience
+
+#### Columbia University, Mailman School of Public Health, New York, NY	 
+
+*Master of Public Health, Health Policy and Management*
+
+Relevant Coursework: 
+
+* Health Systems
+* Healthcare Accounting & Budgeting
+* Empirical Analysis for Health Policy
+* Research Methods and Applications
+* Data Science
+
+#### Pharmaceutical University, China
+
+*Bachelor of Natural Science, Pharmacy*
+
+Relevant Coursework:
+
+* Pharmaceutics
+* Pharmaceutical Analysis
+* Introduction of Clinical Medicine
+
+<br>
+
+## Professonal Experience
+
+#### Qeios, London, UK
+
+*Communication and Engagement Intern*
+
+* Drafted article summaries for newly and revised posted articles
+* Posted summaries on social media
+* Engaged in user development
+* Built connection and communicated with scholars and journalists
+* Prepared response emails
+* Organized user information
+
+#### Whiteoak Consulting Co., Ltd., China
+
+*Regulatory affairs*
+
+* Served as regulatory advisor and provided strategic consultancy to pharmaceutical industry clients
+* Conducted negotiations to obtain or maintain marketing product authorization
+* Presented registration documents to regulatory agencies
+* Reviewed final submission files
+* Prepared gap analysis reports
+* Drafted project plans
+

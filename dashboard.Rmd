@@ -7,9 +7,51 @@ output:
     source: embed
 ---
 
+
 ```{r setup, include=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+
 library(flexdashboard)
 ```
+
+```{r}
+data("ny_noaa")
+
+ny_noaa = ny_noaa %>% 
+  janitor::clean_names() %>% 
+  separate(date, into = c("year", "month","day"), sep = "-") %>% 
+  mutate(
+    prcp = prcp / 10,
+    tmax = as.numeric(tmax) / 10,
+    tmin = as.numeric(tmin) / 10,
+    year = as.numeric(year),
+    month = month.name[as.numeric(month)],
+    day = as.numeric(day)
+    ) 
+  
+```
+
+
+```{r}
+noaa_sub = ny_noaa %>% 
+  filter(
+    year == "2010",
+    id %in% c("USC00301625", "USC00301595", "USC00301708")) %>% 
+  mutate(
+    name = recode(
+      id,
+      USC00301625 = "Station A",
+      USC00301595 = "Station B",
+      USC00301708 = "Station C"),
+  ) %>% 
+  mutate(
+    month = factor(month, levels = month.name)) %>% 
+    drop_na()
+
+```
+
 
 Column {data-width=650}
 -----------------------------------------------------------------------
@@ -17,7 +59,12 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-
+noaa_sub %>%
+  mutate(text_label = name) %>% 
+   plot_ly(
+     x = ~tmin, y = ~tmax, 
+     color = ~month, type = "scatter", mode = "markers", 
+     text = ~text_label, colors = "viridis", alpha = 0.5)
 ```
 
 Column {data-width=350}
@@ -26,12 +73,18 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-
+noaa_sub %>%
+  plot_ly(
+    x = ~month, y = ~tmax,  color = ~month,
+    type = "box", colors = "viridis")
 ```
 
 ### Chart C
 
 ```{r}
-
+noaa_sub %>% 
+  filter(month == "June") %>% 
+  plot_ly(
+    x = ~day, y = ~prcp, color = ~day, type = "bar",  colors = "viridis")
 ```
 

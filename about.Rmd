@@ -5,3 +5,22 @@ output:
     toc: true
     toc_float: true
 ---
+
+### Mailman School of Public Health
+
+![](images/mailman.jpg)
+
+<br>
+
+### Campus Life
+
+Columbia is a place where students get involved -- in campus affairs, in service projects, in research activities, in the arts, in clubs and organizations, in athletics and in the life of the city.
+
+![](images/campus.jpg)
+
+<br>
+
+### Study Area
+
+![](images/study.jpg)
+

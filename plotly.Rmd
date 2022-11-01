@@ -13,3 +13,50 @@ knitr::opts_chunk$set(
 	message = FALSE
 )
 ```
+
+The plotly plots are created based on [NY NOAA](https://p8105.com/dataset_noaa.html).
+
+# Loading library and dataset
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("ny_noaa")
+
+ny_noaa = ny_noaa %>% 
+  janitor::clean_names() %>% 
+  separate(date, into = c("year", "month","day"), sep = "-") %>% 
+  mutate(
+    prcp = prcp / 10,
+    tmax = as.numeric(tmax) / 10,
+    tmin = as.numeric(tmin) / 10,
+    year = as.numeric(year),
+    month = month.name[as.numeric(month)],
+    day = as.numeric(day)
+    ) 
+  
+```
+
+# Make a sub dataset
+
+```{r}
+noaa_sub = ny_noaa %>% 
+  filter(
+    year == "2010",
+    id %in% c("USC00301625", "USC00301595", "USC00301708")) %>% 
+  mutate(
+    name = recode(
+      id,
+      USC00301625 = "Station A",
+      USC00301595 = "Station B",
+      USC00301708 = "Station C"),
+  ) %>% 
+  mutate(
+    month = factor(month, levels = month.name)) %>% 
+    drop_na()
+
+```

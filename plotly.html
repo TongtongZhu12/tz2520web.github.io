@@ -374,7 +374,44 @@ div.tocify {
 </div>
 
 
+<p>The plotly plots are created based on <a
+href="https://p8105.com/dataset_noaa.html">NY NOAA</a>.</p>
+<div id="loading-library-and-dataset" class="section level1">
+<h1>Loading library and dataset</h1>
+<pre class="r"><code>library(tidyverse)
+library(p8105.datasets)
+library(plotly)</code></pre>
+<pre class="r"><code>data(&quot;ny_noaa&quot;)
 
+ny_noaa = ny_noaa %&gt;% 
+  janitor::clean_names() %&gt;% 
+  separate(date, into = c(&quot;year&quot;, &quot;month&quot;,&quot;day&quot;), sep = &quot;-&quot;) %&gt;% 
+  mutate(
+    prcp = prcp / 10,
+    tmax = as.numeric(tmax) / 10,
+    tmin = as.numeric(tmin) / 10,
+    year = as.numeric(year),
+    month = month.name[as.numeric(month)],
+    day = as.numeric(day)
+    ) </code></pre>
+</div>
+<div id="make-a-sub-dataset" class="section level1">
+<h1>Make a sub dataset</h1>
+<pre class="r"><code>noaa_sub = ny_noaa %&gt;% 
+  filter(
+    year == &quot;2010&quot;,
+    id %in% c(&quot;USC00301625&quot;, &quot;USC00301595&quot;, &quot;USC00301708&quot;)) %&gt;% 
+  mutate(
+    name = recode(
+      id,
+      USC00301625 = &quot;Station A&quot;,
+      USC00301595 = &quot;Station B&quot;,
+      USC00301708 = &quot;Station C&quot;),
+  ) %&gt;% 
+  mutate(
+    month = factor(month, levels = month.name)) %&gt;% 
+    drop_na()</code></pre>
+</div>
 
 
 
